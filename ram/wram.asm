@@ -1833,7 +1833,9 @@ wWarpEntries:: ds MAX_WARP_EVENTS * 4 ; Y, X, warp ID, map ID
 ; if $ff, the player's coordinates are not updated when entering the map
 wDestinationWarpID:: db
 
-	ds 128
+	ds 67
+
+wClockBuffer::  ds 60
 
 ; number of signs in the current map (up to MAX_BG_EVENTS)
 wNumSigns:: db
@@ -2198,7 +2200,13 @@ wOpponentAfterWrongAnswer:: db
 ; mostly copied from map-specific map script pointer and written back later
 wCurMapScript:: db
 
-	ds 7
+wRTCHours::     db
+wRTCMinutes::   db
+wRTCSeconds::   db
+wRTCDayOfWeek:: db
+wRTCDay::       db
+wRTCMonth::     db
+wRTCYear::      db
 
 wPlayTimeHours:: db
 wPlayTimeMaxed:: db
